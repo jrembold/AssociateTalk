@@ -1,6 +1,5 @@
-# Class Repository Starter with RevealJS Slides
+# Associate Talk
 
-This repo is intented to be a quick template repo to use to start a new repository for a course which will use revealjs slides. It does use submodules to bring in the revealjs source as well as some plugins, and so should likely be cloned with
-```bash
-git clone --recurse-submodules https://github.com/jrembold/class_slides_template
-```
+This repository houses the slides and contest of my November 2 talk on databases. This talk was given as part of my promotional materials for advancing to clinical associate.
+
+This repo does utilize submodules, so it should be cloned with the `--recurse-submodules` option.

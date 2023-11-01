@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="John Doe">
-  <meta name="dcterms.date" content="2000-01-01">
-  <title>A Great Title</title>
+  <meta name="author" content="Jed Rembold">
+  <meta name="dcterms.date" content="2023-11-02">
+  <title>Harnessing the Hidden Potential of Databases</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -14,12 +14,20 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
   </style>
-  <link rel="stylesheet" href="../html_srcs/revealjs/../css/theme/monokai.css" id="theme">
+  <link rel="stylesheet" href="../html_srcs/revealjs/../css/theme/the_grand_tour.css" id="theme">
   <link rel="stylesheet" href="../html_srcs/revealjs/../css/highlight/monokai.css">
 </head>
 <body>
@@ -27,144 +35,129 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">A Great Title</h1>
-  <p class="author">John Doe</p>
-  <p class="date">January 1, 2000</p>
+  <h1 class="title">Harnessing the Hidden Potential of Databases</h1>
+  <p class="subtitle">Exploring the Why and How of Database Utilization
+in Research and Learning</p>
+  <p class="author">Jed Rembold</p>
+  <p class="date">November 2, 2023</p>
 </section>
 
-<section id="lovely-slide-title" class="slide level2">
-<h2>Lovely Slide Title</h2>
+<section id="talk-structure" class="slide level2">
+<h2>Talk Structure</h2>
 <ul>
-<li>Bullet points galore</li>
-<li>Nested bulleted lists
+<li>Background: How did I get here?
 <ul>
-<li>like this
-<ul>
-<li>and this</li>
+<li>Introduction</li>
+<li>Past research</li>
 </ul></li>
-<li>Support links like <a href="#/">this</a></li>
+<li>What are databases?
+<ul>
+<li>Basics</li>
+<li>Compare and contrast to spreadsheets</li>
 </ul></li>
-<li><strong>Bold some things</strong></li>
-<li>and <em>emphasize</em> others</li>
-</ul>
-</section>
-<section id="multicolumn-support" class="slide level2">
-<h2>Multicolumn support</h2>
-<div class="cols">
-<div class="col">
-<dl>
-<dt>Option A:</dt>
-<dd>
-Description A
-</dd>
-<dt>Option B:</dt>
-<dd>
-Description B
-</dd>
-<dd>
+<li>Installation and Use
 <ul>
-<li>with some</li>
+<li>Options: from simple to complex</li>
+<li>Interfaces</li>
+</ul></li>
+<li>Examples</li>
+<li>Summary</li>
 </ul>
-</dd>
-<dd>
+</section>
+<section>
+<section id="background-how-did-i-get-here"
+class="title-slide slide level1">
+<h1>Background: How did I get here?</h1>
+
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
 <ul>
-<li>bullet points</li>
-</ul>
-</dd>
-</dl>
-</div>
-<div class="col">
+<li>My background lies in Physics
 <ul>
-<li>and then some content</li>
-<li>over here as well</li>
+<li>BS from Linfield College in Physics and Mathematics (2007)</li>
+<li>PhD from the New Mexico Institute of Mining and Technology in
+Physics with specialization in Astrophysics (2014)</li>
+</ul></li>
 </ul>
-</div>
-</div>
 </section>
-<section id="images" class="slide level2">
-<h2>Images</h2>
-<figure>
-<img data-src="../images/example_image.jpeg" alt="A lovely image" />
-<figcaption aria-hidden="true">A lovely image</figcaption>
-</figure>
+<section id="grad-research" class="slide level2">
+<h2>Grad Research</h2>
 </section>
-<section id="mathjax-support" class="slide level2">
-<h2>Mathjax support</h2>
-<div class="cols">
-<div class="col block" name="Theorem">
-<p>We will use a theorem</p>
-<p><span class="math display">\[\sum_i^{10} 5i^2 + 4\]</span></p>
-</div>
-<div class="col">
-<ul>
-<li>here I will</li>
-<li>include some more things</li>
-<li>that I want</li>
-</ul>
-</div>
-</div>
+<section id="wu-research" class="slide level2">
+<h2>WU Research</h2>
 </section>
-<section id="code-test" class="slide level2">
-<h2>Code Test!</h2>
-<p>Here we have some code with sections highlighted, using reveals built
-in functionality alongside highlightjs.</p>
-<pre ><code class="python-repl" data-line-numbers="-|1-3|4,5|6-7|9-15|16-22">>>> A = 10
->>> A
-10
->>> int(23.45)
-23
->>> type(A)
-int
->>> # this is a comment! 123
->>> for i in range(5):
-        print(i)
-0
-1
-2
-3
-4
->>> for i in range(5):
-        print(i)
-0
-1
-2
-3
-4
->>> print("yay this works!")
-yay this works!</code></pre>
-<!-- Presenter notes -->
-<aside class="notes">
-<p>Here I should talk about some things</p>
-</aside>
+<section id="currently" class="slide level2">
+<h2>Currently</h2>
+</section></section>
+<section>
+<section id="what-is-a-database" class="title-slide slide level1">
+<h1>What is a Database?</h1>
+
 </section>
-<section id="extra-inline-test" class="slide level2">
-<h2>Extra inline test</h2>
-<p>What about if I want code inline like this:
-<code class="python">print(10)</code>? That works as well.</p>
+<section id="relational-tables" class="slide level2">
+<h2>Relational Tables</h2>
 </section>
-<section id="tables" class="slide level2">
-<h2>Tables</h2>
-<p>Tables can be created using several different supported markdown
-flavors</p>
-<table>
-<thead>
-<tr class="header">
-<th>Command</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Red Light</td>
-<td>One should stop immediately and not move</td>
-</tr>
-<tr class="even">
-<td>Green Light</td>
-<td>One should start walking forwards</td>
-</tr>
-</tbody>
-</table>
+<section id="differences-from-spreadsheets" class="slide level2">
+<h2>Differences from Spreadsheets</h2>
 </section>
+<section id="benefits-over-spreadsheets" class="slide level2">
+<h2>Benefits over spreadsheets</h2>
+</section>
+<section id="sql" class="slide level2">
+<h2>SQL</h2>
+</section>
+<section id="types" class="slide level2">
+<h2>Types</h2>
+</section></section>
+<section>
+<section id="installation-and-use" class="title-slide slide level1">
+<h1>Installation and Use</h1>
+
+</section>
+<section id="easiest-sqlite" class="slide level2">
+<h2>Easiest: SQLite</h2>
+</section>
+<section id="local-server" class="slide level2">
+<h2>Local Server</h2>
+</section>
+<section id="remote-server" class="slide level2">
+<h2>Remote Server</h2>
+</section>
+<section id="sql-client" class="slide level2">
+<h2>SQL Client</h2>
+</section>
+<section id="nocodb" class="slide level2">
+<h2>NocoDB</h2>
+</section>
+<section id="docker" class="slide level2">
+<h2>Docker??</h2>
+</section></section>
+<section>
+<section id="examples" class="title-slide slide level1">
+<h1>Examples</h1>
+
+</section>
+<section id="polling" class="slide level2">
+<h2>Polling</h2>
+</section>
+<section id="grades" class="slide level2">
+<h2>Grades</h2>
+</section>
+<section id="sections" class="slide level2">
+<h2>Sections</h2>
+</section></section>
+<section>
+<section id="conclusions" class="title-slide slide level1">
+<h1>Conclusions</h1>
+
+</section>
+<section id="proscons" class="slide level2">
+<h2>Pros/Cons</h2>
+</section>
+<section id="thanks" class="slide level2">
+<h2>Thanks</h2>
+</section></section>
     </div>
   </div>
 
