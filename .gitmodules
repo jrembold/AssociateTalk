@@ -1,0 +1,6 @@
+[submodule "Lectures/html_srcs/revealjs"]
+	path = Lectures/html_srcs/revealjs
+	url = https://github.com/hakimel/reveal.js
+[submodule "Lectures/html_srcs/plugin"]
+	path = Lectures/html_srcs/plugin
+	url = https://github.com/rajgoel/reveal.js-plugins.git
