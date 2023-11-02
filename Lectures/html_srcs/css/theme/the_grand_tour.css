@@ -5,17 +5,12 @@
  */
 
 :root {
-    --red: #9C343C;
-    --orange: #965027;
-    --yellow: #C5A342;
-    --green: #245041;
-    --teal: #369DA6;
-    --blue: #87A99D;
-    --purple: #C79CA2;
-    --foreground: #222222;
-    --background: #EEE5CF;
-    --comments: #CFBDA0;
-    --full-background: #EEE5CF;
+    --red: #78290F;
+    --orange: #FF7D00;
+    --green: #15616D;
+    --foreground: #001524;
+    --background: #FFECD1;
+    --full-background: #FFECD1;
 }
 
 @font-face{
@@ -63,7 +58,7 @@ svg {
   display: block;
   text-align: left;
   font-style: normal;
-  border: 5px solid var(--purple);
+  border: 5px solid var(--foreground);
   background-color: var(--background);
   border-radius: 15px 30px 15px 30px;
   padding-left: 0px;
@@ -90,13 +85,13 @@ svg {
   display: inline-block;
   /*width: 100%;*/
   border-radius: 10px;
-  border: 5px solid var(--purple);
+  border: 5px solid var(--foreground);
   padding-left: 10px;
   padding-right: 10px;
   /*padding-top: -5px;*/
   font-weight: bold;
   color: var(--foreground);
-  background-color: var(--teal);
+  background-color: var(--green);
   position: absolute;
   top: -30px;
   left: 30px;
@@ -151,7 +146,7 @@ svg {
 	margin-top: 0px;
 	padding-top: 0px;
 	font-size: 80%;
-	color: var(--comments);
+	color: var(--foreground);
 }
 
 ::selection {
@@ -189,10 +184,36 @@ svg {
   word-wrap: break-word; }
 
 .reveal h1 {
-  font-size: 2.5em;
-  color: var(--background);
-  background-color: var(--purple);
+  font-size: 2.0em;
+  /*color: var(--foreground);*/
+  color: linear-gradient(to right, var(--foreground) 0%, var(--green) 100%);
+  text-align: left;
+  width: 85%;
+  /*background-color: var(--red);*/
   margin: 300px 0px 10px 0px;}
+
+.reveal h1:after {
+  content: "";
+  background: linear-gradient(to right, var(--red), var(--green));
+  animation: titleshift 10s ease infinite;
+  width: 85%;
+  height: 40px;
+  border-radius: 20px;
+  display: block;
+}
+
+@keyframes titleshift {
+  0% { background-position: 0% 50%; }
+  50% {background-position: 100% 50%; }
+  100% {background-position: 0% 50%; }
+}
+
+.reveal .subtitle {
+  float: right;
+  margin-left: 20%;
+  font-weight: bold;
+  color: var(--green);
+}
 
 .reveal h2 {
   font-size: 1.8em;
@@ -228,18 +249,21 @@ svg {
 
 .reveal p.author {
 	/*margin: 20px 0;*/
-	float:left;
+    position: absolute;
+    left: 0%;
+    top: 20%;
+    color: var(--orange);
 	line-height: 1.3;
 	font-weight: bold;
-	text-align:center
+	/*text-align:center;*/
 }
 
 .reveal p.date {
 	float:right;
 	margin: 20px 0;
 	line-height: 1.3;
-	color: var(--teal);
-	font-weight: bold;
+	color: var(--red);
+	/*font-weight: bold;*/
 }
 /* Ensure certain elements are never larger than the slide itself */
 .reveal img,
@@ -257,7 +281,7 @@ svg {
 
 .reveal em {
   font-style: italic;
-  color: var(--teal);}
+  color: var(--green);}
 
 .reveal ol,
 .reveal dl {
@@ -288,8 +312,10 @@ margin-left: 1em;*/ }
 
 .reveal ul>li:before {
 	/*content: "\f62f";*/
-	content: "\f7d8";
-    color: var(--blue);
+	/*content: "\f7d8";*/
+    content: "\e706";
+    color: var(--green);
+    filter        : drop-shadow(3px 3px 3px rgba(130,130,130,1));
 	/*border-color: transparent var(--green);*/
 	/*border-style: solid;*/
 	/*border-width: 0.35em 0 0.35em 0.65em;*/
@@ -351,7 +377,7 @@ margin-left: 1em;*/ }
 
 .reveal ol>li:before {
 	content: counter(li)". ";
-	color: var(--red);
+	color: var(--green);
 	display: block;
 	position: relative;
 	left: -1.5em;
@@ -373,11 +399,11 @@ margin-left: 1em;*/ }
 /*}*/
 
  .reveal li li:before{
-	 color: var(--teal);
+	 color: var(--orange);
  }
 
  .reveal li li li:before{
-	 color: var(--green);
+	 color: var(--red);
  }
 
 .reveal li ul {
@@ -400,7 +426,7 @@ margin-left: 1em;*/ }
 
 .reveal dt {
   font-weight: bold;
-  color: var(--teal);
+  color: var(--green);
   }
 
 .reveal dd {
@@ -445,7 +471,8 @@ margin-left: 1em;*/ }
   border-radius: 10px;
   display: inline;
   font-size: 1em;
-  background: var(--background);
+  /*background: var(--background);*/
+  background: #ccbda7;
   color: var(--foreground);
   text-transform: none; 
   padding: 0px 10px;
@@ -476,7 +503,7 @@ margin-left: 1em;*/ }
 .reveal .file:before {
 	content: attr(name);
     font-style: italic;
-	color: var(--teal);
+	color: var(--green);
 	width: 100%;
 	border-bottom: 2px solid;
 	margin-bottom: 15px;
@@ -568,7 +595,7 @@ margin-left: 1em;*/ }
  * LINKS
  *********************************************/
 .reveal a {
-  color: var(--purple);
+  color: var(--red);
   font-weight: bold;
   text-decoration: none;
   -webkit-transition: color .15s ease;
@@ -576,7 +603,7 @@ margin-left: 1em;*/ }
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: var(--orange);
+  color: var(--red);
   font-weight: bold;
   text-shadow: none;
   border: none; }
@@ -619,7 +646,7 @@ margin-left: 1em;*/ }
  *********************************************/
 .reveal .controls {
   display: none;
-  color: var(--comments); }
+  color: var(--green); }
 
 
 /*********************************************
@@ -627,7 +654,7 @@ margin-left: 1em;*/ }
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: var(--purple);
+  color: var(--green);
   height: 5px;
 }
 
@@ -638,11 +665,11 @@ margin-left: 1em;*/ }
 
 .reveal .slide-number {
   background-color: transparent;
-  color: var(--comments);
-  font-size: 0.6em;
-  bottom: 19px;
+  color: var(--green);
+  font-size: 0.4em;
+  bottom: 45px;
   right: 26px;
-  width: 2em;
+  width: 3em;
   text-align: center;
 }
 
@@ -664,10 +691,10 @@ margin-left: 1em;*/ }
 	background: var(--foreground);
 }
 ::-webkit-scrollbar-thumb {
-	background-color: var(--purple);
+	background-color: var(--green);
 }
 ::-webkit-scrollbar-thumb:hover {
-	background-color: var(--teal);
+	background-color: var(--orange);
 }
 
 /*
@@ -703,7 +730,7 @@ margin-left: 1em;*/ }
 /*Custom Text Environments*/
 .pseudotext>pre {
 	width: 90%;
-	border: 2px var(--blue) solid;
+	border: 2px var(--red) solid;
 	background-color: var(--background);
 	font-style: italic;
 	padding: 20px;
@@ -714,7 +741,7 @@ margin-left: 1em;*/ }
 
 .text>pre {
 	width: 90%;
-	border: 2px var(--blue) solid;
+	border: 2px var(--green) solid;
 	background-color: var(--background);
 	font-style: monospace;
 	padding: 20px;
@@ -751,6 +778,6 @@ margin-left: 1em;*/ }
 .reveal .quip p {
   font-size: 1.2em;
   font-weight: bold;
-  color: var(--teal);
+  color: var(--green);
   text-align: center;
 }
