@@ -90,7 +90,7 @@ svg {
   padding-right: 10px;
   /*padding-top: -5px;*/
   font-weight: bold;
-  color: var(--foreground);
+  color: var(--background);
   background-color: var(--green);
   position: absolute;
   top: -30px;

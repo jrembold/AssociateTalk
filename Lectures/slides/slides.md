@@ -11,6 +11,9 @@ height: 1080
 transition: fade
 ---
 
+## Slides URL
+
+![The slides contain links, and so here is a link to this exact slide deck](../images/slidesqr.png){width=40%}
 
 ## Talk Structure
 - Background: How did I get here?
@@ -27,7 +30,7 @@ transition: fade
 
 # Background: How did I get here?
 
-## Summary
+## A Timeline
 
 ![](../images/timeline.svg)
 
@@ -86,7 +89,7 @@ transition: fade
 - Relational databases also happen to still be incredibly popular in industry
 
 ## Why Relational Tables?
-- Suppose you wanted to keep track of your friends birthdays
+- Suppose you wanted to keep track of your friends' birthdays
     - This could easily be accomplished in a single table
 
 | First Name | Last Name | Birthday
@@ -165,9 +168,9 @@ PHYS221 | MWF | 10:00pm
 ## Benefits over spreadsheets
 - Data Integrity
     - Columns enforce types, calculations can not be mistaken for data, relationships between tables enforced
+    - More effective at eliminating duplicate information, and the possible issues that arise
 - Far better performance for huge numbers of records
 - Database servers are build for multi-user access, facilitating sharing of data and with full user access control and permissions
-- More effective at eliminating duplicate information, and the possible issues that arise
 - Excellent support from all popular coding languages for accessing database information
 - Separates where the data is stored from where it is analyzed
 
@@ -177,10 +180,10 @@ PHYS221 | MWF | 10:00pm
 - Primarily used for managing the database, adding records to the database, or extracting specific information from the database
 
 ```sql
-SELECT columns
+SELECT column_names
 FROM table_name
 WHERE condition_is_true
-ORDER BY column;
+ORDER BY column_name;
 ```
 
 
@@ -240,8 +243,19 @@ ORDER BY column;
 # Examples
 
 ## Polling
+- For years now I've used an SQLite database to record student submissions to my in-class polls
+- SQLite database and the web server that runs the polling form live on a Raspberry Pi microcomputer
+- Later I go back and query the responses to generate my participation scores
+- Over 18k submissions stored
 
 ## Grades
+- I generate my own grade reports for my classes, and have done so for years
+- Switching to using a database on the backend has made this **so much easier**
+- Also allows me total control over implementing other programs that can interface with this system
+    - Grading rubrics for helping me grade
+    - Grade reporting systems
+    - Interfacing with submission systems (GitHub Classroom)
+
 
 # Conclusions
 
@@ -270,7 +284,7 @@ ORDER BY column;
 
 
 ## Wrapping Up
-- Thank you to all of your for attending!
-- Hopefully I've at least put the thought in your head that in certain cases databases can be worth the shift
+- Thanks to all of you for attending!
+- Hopefully I've at least put the thought in your head that in certain cases databases can be worth the shift.
     - They have massively impacted the way I operate (for the better) these past several years.
-- Please know that I'm always happy to help advise or assist anyone with database related questions
+- Please know that I'm always happy to help advise or assist anyone with database related questions.
